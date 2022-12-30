@@ -1,0 +1,25 @@
+.header {
+  &__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  &__links{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+  }
+  &__link{
+    &-redirect{
+      text-decoration: none;
+      color: inherit;
+      transition: 200ms;
+      transform: scale(1);
+    }
+    &-redirect:hover{
+      transform: scale(1.3);
+    }
+  }
+}

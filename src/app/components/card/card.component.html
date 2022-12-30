@@ -1,0 +1,9 @@
+<div *ngIf="product" class="card__container">
+  <h3 class="card__title">{{ product.name }}</h3>
+  <p class="card__description">{{ product.description }}</p>
+  <a class="card__link" [routerLink]="['/product/', product.id]">
+    Detalle
+  </a>
+</div>
+
+
