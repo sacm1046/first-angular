@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { Product } from 'src/app/interfaces/product.interface';
 
 @Component({
@@ -7,9 +8,13 @@ import { Product } from 'src/app/interfaces/product.interface';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
-  products: Product[] = [
-    { id: 1, name: "Product 1", description: "Description 1" },
-    { id: 2, name: "Product 2", description: "Description 2" },
-    { id: 3, name: "Product 3", description: "Description 3" }
-  ]
+  http = inject(HttpClient)
+
+  products: Product[] = []
+  ngOnInit() {
+    this.http.get<Product[]>('https://fakestoreapi.com/products')
+      .subscribe(data => {
+        this.products = data
+      })
+  }
 }
