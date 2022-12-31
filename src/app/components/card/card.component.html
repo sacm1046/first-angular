@@ -1,4 +1,5 @@
 <div *ngIf="product" class="card__container">
+  <img [ngSrc]="product.image" width="400" height="400">
   <h3 class="card__title">{{ product.title }}</h3>
   <p class="card__description">{{ product.description }}</p>
   <a class="card__link" [routerLink]="['/product/', product.id]">

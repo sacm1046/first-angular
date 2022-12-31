@@ -15,6 +15,7 @@ export class ProductsComponent {
     this.http.get<Product[]>('https://fakestoreapi.com/products')
       .subscribe(data => {
         this.products = data
+        console.log(data)
       })
   }
 }
