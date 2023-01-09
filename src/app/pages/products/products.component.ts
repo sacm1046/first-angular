@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Product } from 'src/app/interfaces/product.interface';
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -12,10 +13,14 @@ export class ProductsComponent {
 
   products: Product[] = []
   ngOnInit() {
-    this.http.get<Product[]>('https://fakestoreapi.com/products')
-      .subscribe(data => {
-        this.products = data
-        console.log(data)
-      })
+    this.http["get"]<Product[]>('https://fakestoreapi.com/products')
+      .subscribe(
+        data => {
+          this.products = data
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        })
   }
 }

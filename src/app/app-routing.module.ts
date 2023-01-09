@@ -4,11 +4,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { FormComponent } from './pages/form/form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'product/:id', component: ProductComponent },
+  { path: 'form', component: FormComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
