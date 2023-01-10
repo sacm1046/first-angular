@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Data } from '../interfaces/data.interface';
 
 @Component({
@@ -8,7 +8,7 @@ import { Data } from '../interfaces/data.interface';
 })
 export class FormularyComponent {
   @Input() form!: Data
-  @Input() items!: Data[]
+  @Output() onAdd: EventEmitter<Data> = new EventEmitter()
 
   initial = {
     name: "",
@@ -16,7 +16,7 @@ export class FormularyComponent {
   }
 
   submit(){
-    this.items.push(this.form)
+    this.onAdd.emit(this.form)
     this.form = {...this.initial}
   }
 }

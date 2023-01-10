@@ -1,7 +1,8 @@
 <div class="form__container">
   <h1 class="form__title">Form</h1>
 
-  <app-formulary [items]="items" [form]="form"></app-formulary>
-
-  <app-list [items]="items"></app-list>
+  <div class="form__content">
+    <app-formulary (onAdd)="addNewItem($event)" [form]="form"></app-formulary>
+    <app-list [items]="items"></app-list>
+  </div>
 </div>

@@ -13,5 +13,9 @@ export class FormComponent {
   }
 
   items: Data[] = []
-  form: Data = {...this.initial}
+  form: Data = { ...this.initial }
+
+  addNewItem(item: Data) {
+    this.items.push(item)
+  }
 }
