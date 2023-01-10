@@ -1,0 +1,11 @@
+<form (ngSubmit)="submit()" class="form__form">
+
+  <input class="form__input" type="text" name="name" placeholder="name" [(ngModel)]="form.name">
+
+  <input class="form__input" type="number" name="age" placeholder="age" [(ngModel)]="form.value">
+
+  <button class="form__submit" type="submit" [disabled]="!form.name || !form.value">
+    Enviar
+  </button>
+
+</form>
